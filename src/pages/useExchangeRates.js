@@ -12,7 +12,7 @@ export function useExchangeRates(base = "USD") {
     setLoading(true);
     setError(null);
 
-    fetch(`https://api.frankfurter.app/latest?from=${base}`)
+    fetch(`https://api.frankfurter.dev/v1/latest?base=${base}`)
       .then((r) => {
         if (!r.ok) throw new Error(`FX HTTP ${r.status}`);
         return r.json();

@@ -6,11 +6,10 @@ function HP() {
   const [places, setPlaces] = useState([]);
   const navigate = useNavigate();
 
-  // JSON 데이터 불러오기
   useEffect(() => {
     fetch(process.env.PUBLIC_URL + "/data/hotplace.json")
       .then(res => res.json())
-      .then(data => setPlaces(data.slice(0, 5))) // 상위 5개만
+      .then(data => setPlaces(data.slice(0, 5)))
       .catch(err => console.error(err));
   }, []);
 
@@ -21,12 +20,15 @@ function HP() {
   return (
     <S.Section>
       <S.TitleWrapper>
-        <S.SectionTitle>Hot Place</S.SectionTitle>
+        <S.HeaderTextBlock>
+          <S.Eyebrow>01 · Explore</S.Eyebrow>
+          <S.SectionTitle>Hot Place</S.SectionTitle>
+        </S.HeaderTextBlock>
         <S.ReadMore onClick={() => {
             navigate("/hot-place");
             window.scrollTo({ top: 0, left: 0, behavior: "auto" });
           }}>
-          Read More →
+          See all →
         </S.ReadMore>
       </S.TitleWrapper>
       <S.SubTitle>Check out the famous attractions in Seoul!</S.SubTitle>

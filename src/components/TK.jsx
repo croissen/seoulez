@@ -6,7 +6,6 @@ function TK() {
   const [foods, setFoods] = useState([]);
   const navigate = useNavigate();
 
-  // JSON 데이터 불러오기 (상위 5개만)
   useEffect(() => {
     fetch(process.env.PUBLIC_URL + "/data/tastykorea.json")
       .then(res => res.json())
@@ -14,13 +13,11 @@ function TK() {
       .catch(err => console.error(err));
   }, []);
 
-  // 상세페이지 이동
   const goDetail = (id) => {
     navigate(`/tasty-korea-detail/${id}`);
     window.scrollTo({ top: 0, behavior: "auto" });
   };
 
-  // Read More 버튼 이동
   const goTastyKoreaPage = () => {
     navigate("/tasty-korea");
     window.scrollTo({ top: 0, behavior: "auto" });
@@ -29,8 +26,11 @@ function TK() {
   return (
     <S.Section>
       <S.TitleWrapper>
-        <S.SectionTitle>Tasty Korea</S.SectionTitle>
-        <S.ReadMore onClick={goTastyKoreaPage}>Read More →</S.ReadMore>
+        <S.HeaderTextBlock>
+          <S.Eyebrow>02 · Taste</S.Eyebrow>
+          <S.SectionTitle>Tasty Korea</S.SectionTitle>
+        </S.HeaderTextBlock>
+        <S.ReadMore onClick={goTastyKoreaPage}>See all →</S.ReadMore>
       </S.TitleWrapper>
       <S.SubTitle>Check out Korea's representative foods and their prices!</S.SubTitle>
 
@@ -38,8 +38,10 @@ function TK() {
         {foods.map((food) => (
           <S.FoodCard key={food.id} onClick={() => goDetail(food.id)}>
             <S.FoodImg src={process.env.PUBLIC_URL + food.img} alt={food.name} />
-            <S.FoodName>{food.name}</S.FoodName>
-            <S.FoodPrice>{food.price}</S.FoodPrice>
+            <S.FoodMeta>
+              <S.FoodName>{food.name}</S.FoodName>
+              {food.price && <S.FoodPrice>{food.price}</S.FoodPrice>}
+            </S.FoodMeta>
           </S.FoodCard>
         ))}
       </S.PlacesWrapper>

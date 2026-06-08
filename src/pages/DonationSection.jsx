@@ -11,12 +11,6 @@ const DonationSection = () => {
         Thank you so much! 🙏
       </S.SectionText>
 
-      {/* 한국 계좌 정보 */}
-      <S.DonationInfo>
-        <p>기업은행</p>
-        <p>97303748201019 (**민)</p>
-      </S.DonationInfo>
-
       {/* Ko-fi 버튼 */}
       <S.DonationInfo>
         <p>Or support us via Ko-fi:</p>

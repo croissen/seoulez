@@ -2,7 +2,7 @@
   {
     "id": "cup_noodles",
     "name": "Cup Noodles",
-    "price": "₩1,600",
+    "price": "$1",
     "img": "/img/conveniencefoods/cupnudles.jpg",
     "desc": "A quick and popular instant noodle dish in a convenient cup format, enjoyed by many in Korea. 🍜",
     "content": "Cup noodles are an indispensable convenient food at Korean convenience stores! Many people look for them because you can simply add hot water and enjoy a warm and delicious meal anytime, anywhere. There are various flavors and types."
@@ -10,7 +10,7 @@
   {
     "id": "samgak_kimbap",
     "name": "Samgak Kimbap",
-    "price": "₩1,500",
+    "price": "$1",
     "img": "/img/conveniencefoods/samgak.jpg",
     "desc": "A triangle-shaped rice ball, a beloved and convenient snack or light meal in Korea. 🍙",
     "content": "Samgak Kimbap is a triangle-shaped rice ball, and it's a representative convenience store item that allows you to easily enjoy a meal with various fillings between the seaweed and rice. There are so many types, it's fun to choose from!"
@@ -18,7 +18,7 @@
   {
     "id": "bottled_water_500ml",
     "name": "Bottled Water (500ml)",
-    "price": "₩1,000",
+    "price": "$0.72",
     "img": "/img/conveniencefoods/water.webp",
     "desc": "Pure, refreshing bottled water in a 500ml size, perfect for staying hydrated on the go. 💧",
     "content": "500ml bottled water is an essential item people most commonly look for at convenience stores when they want to quench their thirst. The 500ml size is easy to carry, allowing you to enjoy it refreshingly anywhere. It is generally sold for around ₩1,000 at most convenience stores."
@@ -26,7 +26,7 @@
   {
     "id": "snack",
     "name": "Snack",
-    "price": "₩2,500",
+    "price": "$2",
     "img": "/img/conveniencefoods/snack.jpg",
     "desc": "A variety of packaged crispy or chewy treats, widely available at convenience stores for a quick bite or indulgence. 🍟",
     "content": "At convenience stores, you can find countless types of snacks. From sweet to savory, crispy to soft, you can choose according to your taste, making them perfect when you're bored or have a craving!"
@@ -34,7 +34,7 @@
   {
     "id": "ice_cream",
     "name": "Ice Cream",
-    "price": "₩1,200",
+    "price": "$0.87",
     "img": "/img/conveniencefoods/icecream.webp",
     "desc": "A popular frozen dessert available in various forms like bars, cones, and cups, perfect for cooling down. 🍦",
     "content": "Ice cream is a great treat to enjoy to cool down on hot days. There are various types and flavors, such as bars, cones, and cups, so you can choose whatever you prefer. Convenience store freezers are filled with them!"
@@ -42,7 +42,7 @@
   {
     "id": "dosirak",
     "name": "Dosirak",
-    "price": "₩4,800",
+    "price": "$3.50",
     "img": "/img/conveniencefoods/dosirak.webp",
     "desc": "A convenient pre-packaged meal box, typically containing rice, a main dish, and various side dishes. 🍱",
     "content": "Dosirak is a convenience store meal box that allows you to enjoy a hearty meal like home-cooked food. It consists of rice, a main dish, and various side dishes, so you can have a filling meal. Its popularity is so high that new menus are released daily!"

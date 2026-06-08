@@ -1,4 +1,3 @@
-// src/components/More.js (수정된 코드)
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./More.styles";
@@ -12,23 +11,36 @@ function More() {
   };
 
   return (
-    <S.Section> 
+    <S.Section>
       <S.TopContentWrapper>
-        <S.ContentBlock bgImg={process.env.PUBLIC_URL + "/img/calc.jpg"}>
+        <S.ContentBlock
+          bgImg={process.env.PUBLIC_URL + "/img/calc.jpg"}
+          onClick={() => goToPage("/trip-calc")}
+        >
           <h2>For a Smart Trip to Korea</h2>
           <p>Simulate your travel expenses!</p>
-          <S.Button onClick={() => goToPage("/trip-calc")}>Trip Calculator</S.Button>
+          <S.Button onClick={(e) => { e.stopPropagation(); goToPage("/trip-calc"); }}>
+            Trip Calculator →
+          </S.Button>
         </S.ContentBlock>
 
-        <S.ContentBlock bgImg={process.env.PUBLIC_URL + "/img/tip.jpg"}>
+        <S.ContentBlock
+          bgImg={process.env.PUBLIC_URL + "/img/tip.jpg"}
+          onClick={() => goToPage("/honey-tip")}
+        >
           <h2>Essential Information You Won't Want to Miss</h2>
           <p>Check them out beforehand!</p>
-          <S.Button onClick={() => goToPage("/honey-tip")}>Check Out Honey Tips</S.Button>
+          <S.Button onClick={(e) => { e.stopPropagation(); goToPage("/honey-tip"); }}>
+            Honey Tips →
+          </S.Button>
         </S.ContentBlock>
       </S.TopContentWrapper>
 
-      <S.AboutMeSection> 
-        <S.SectionTitle>Hello, World!</S.SectionTitle>
+      <S.AboutMeSection>
+        <S.SectionHeader>
+          <S.Eyebrow>About</S.Eyebrow>
+          <S.SectionTitle>Hello, World!</S.SectionTitle>
+        </S.SectionHeader>
         <S.AboutMeText>
           Hello, I'm a South Korean residing in Seoul. My greatest wish is for every foreign traveler to experience the beauty of Korea, especially Seoul, without a single regret. I believe every moment of their journey should be filled with happiness!
           <br /><br />
@@ -36,25 +48,25 @@ function More() {
           <br /><br />
           I genuinely hope to communicate and exchange ideas with countless people worldwide through this platform. If you resonate with my vision and wish to join me in this endeavor, please consider supporting me.
         </S.AboutMeText>
-        
-        {/* Donation Button */}
-        <S.DonationButton onClick={() => goToPage("/contact/donation")}>Support My Vision</S.DonationButton>
+
+        <S.DonationButton onClick={() => goToPage("/contact/donation")}>
+          Support My Vision ♥
+        </S.DonationButton>
         <S.GoogleFormNote>
-            * After your support, if you kindly reach out via our Google Form, we promise to personally express our sincere gratitude through the contact information you provide.
-            <S.GoogleFormLink 
-                href="https://forms.gle/uNw63SJ6v3CHmsnT9" 
-                target="_blank" 
-                rel="noopener noreferrer"
-            >
-                (Go to Google Form)
-            </S.GoogleFormLink>
+          * After your support, if you kindly reach out via our Google Form, we promise to personally express our sincere gratitude through the contact information you provide.
+          <S.GoogleFormLink
+            href="https://forms.gle/uNw63SJ6v3CHmsnT9"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            (Go to Google Form)
+          </S.GoogleFormLink>
         </S.GoogleFormNote>
         <S.ClosingRemark>
-            Thank you for your love and support for SeoulEZ! With much love,
-            <br />SeoulEZ
+          Thank you for your love and support for SeoulEZ! With much love,
+          <br />SeoulEZ
         </S.ClosingRemark>
       </S.AboutMeSection>
-
     </S.Section>
   );
 }

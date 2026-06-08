@@ -2,172 +2,189 @@ import styled from "styled-components";
 
 export const Section = styled.section`
   min-height: 100vh;
-  padding: 10% 10%;
+  padding: 7rem 6% 6rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 80px;
-  background-color:rgb(233, 231, 230);
+  gap: 4rem;
+  background: #fafafa;
 
   @media (max-width: 768px) {
-    padding: 0;
+    padding: 5rem 4% 4rem;
+    gap: 3rem;
   }
 `;
 
-export const TopContentWrapper = styled.div`
+export const SectionHeader = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 100px;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 0.5rem;
+`;
+
+export const Eyebrow = styled.div`
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #FF5A5F;
+`;
+
+export const TopContentWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
   width: 100%;
   max-width: 1200px;
-  
+
   @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    max-width: 90%;
-    padding: 20% 0 0 0;
-    box-sizing: border-box;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 `;
 
 export const ContentBlock = styled.div`
-  flex: 1;
-  text-align: center;
-  border-radius: 12px;
-  padding: 100px 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
+  border-radius: 20px;
+  padding: 3.5rem 2rem;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   background: ${(p) =>
-    p.bgImg
-      ? `url(${p.bgImg}) center/cover no-repeat`
-      : "#f9f9f9"};
+    p.bgImg ? `url(${p.bgImg}) center/cover no-repeat` : "#f9f9f9"};
   color: ${(p) => (p.bgImg ? "white" : "inherit")};
-
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-
-  @media (max-width: 768px) {
-    width: 100%;
-    padding: 40px 20px;
-    box-sizing: border-box;
-  }
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &::before {
     content: "";
     display: ${(p) => (p.bgImg ? "block" : "none")};
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.35);
-    border-radius: 12px;
+    background: linear-gradient(
+      180deg,
+      rgba(0,0,0,0.15) 0%,
+      rgba(0,0,0,0.45) 60%,
+      rgba(0,0,0,0.75) 100%
+    );
     z-index: 0;
   }
 
-  h2, p, a {
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(0,0,0,0.16);
+  }
+
+  h2, p, button {
     position: relative;
     z-index: 1;
   }
 
   h2 {
-    font-size: 1.6rem;
-    margin-bottom: 10px;
+    font-size: clamp(1.3rem, 2vw, 1.7rem);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.5rem;
+    line-height: 1.3;
   }
 
   p {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    color: ${(p) => (p.bgImg ? "#f1f1f1" : "#555")};
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+    color: ${(p) => (p.bgImg ? "rgba(255,255,255,0.92)" : "#555")};
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    min-height: 260px;
+    padding: 2.5rem 1.5rem;
   }
 `;
 
 export const Button = styled.button`
-  padding: 12px 24px;
-  font-size: 1rem;
-  background-color: #0077ff;
+  align-self: flex-start;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: #FF5A5F;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 100px;
   cursor: pointer;
-  transition: background 0.2s ease;
-  position: relative;
-  z-index: 1;
+  transition: background 0.2s ease, transform 0.2s ease;
 
   &:hover {
-    background-color: #005fcc;
+    background: #e04b50;
+    transform: translateY(-1px);
   }
 `;
 
 export const AboutMeSection = styled.div`
   width: 100%;
-  max-width: 1000px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  padding: 40px;
+  max-width: 800px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  padding: 3rem 3rem 2.5rem;
   text-align: center;
   line-height: 1.8;
 
   @media (max-width: 768px) {
-    padding: 30px 10% ;
-    max-width: 90%;
-    box-sizing: border-box;
-    margin-bottom: 10%;
+    padding: 2.5rem 1.5rem 2rem;
   }
 `;
 
 export const AboutMeText = styled.p`
-  font-size: 1.05rem;
-  color: #333333;
-  margin-bottom: 30px;
+  font-size: 1rem;
+  color: #444;
+  margin: 0 0 1.75rem;
   white-space: pre-wrap;
+  text-align: left;
+  line-height: 1.85;
 `;
 
 export const DonationButton = styled(Button)`
-  margin-top: 20px;
-  padding: 14px 30px;
-  font-size: 1.1rem;
-  background-color: #FF5A5F;
-  &:hover {
-    background-color: #E04B50;
-  }
+  padding: 0.95rem 2rem;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  align-self: center;
 `;
 
 export const GoogleFormNote = styled.p`
-    font-size: 0.9rem;
-    color: #666;
-    margin-top: 15px;
-    line-height: 1.5;
+  font-size: 0.85rem;
+  color: #777;
+  margin: 1.25rem 0 0;
+  line-height: 1.6;
 `;
 
 export const GoogleFormLink = styled.a`
-    color: #0077ff;
-    text-decoration: none;
-    font-weight: bold;
-    &:hover {
-        text-decoration: underline;
-    }
+  color: #FF5A5F;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 4px;
+  &:hover { text-decoration: underline; }
 `;
 
 export const ClosingRemark = styled.p`
-    font-size: 1rem;
-    color: #444;
-    margin-top: 30px;
-    font-weight: bold;
+  font-size: 0.95rem;
+  color: #444;
+  margin-top: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 `;
 
 export const SectionTitle = styled.h2`
-  font-size: 2.2rem;
-  color: #222;
-  margin-bottom: 20px;
-  font-weight: bold;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  color: #1a1a1a;
+  margin: 0 0 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   text-align: center;
-
-  @media (max-width: 768px) {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-  }
 `;

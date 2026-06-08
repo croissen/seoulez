@@ -39,10 +39,18 @@ function Slideshow() {
           <S.Panorama key={src} src={src} isActive={idx === current} />
         ))}
         <S.Overlay>
-          <S.SlideTitle>Where else? SeoulEZ!!</S.SlideTitle>
-          <S.SlideSubtitle>Discover Seoul the easy and fun way</S.SlideSubtitle>
+          <S.Eyebrow>Seoul · Made Easy</S.Eyebrow>
+          <S.SlideTitle>Where else? SeoulEZ!</S.SlideTitle>
+          <S.SlideSubtitle>
+            Discover Seoul the easy and fun way — places, food, and tips for your trip.
+          </S.SlideSubtitle>
         </S.Overlay>
-        <S.ScrollDown>↓ scroll</S.ScrollDown>
+        <S.Dots>
+          {images.map((_, i) => (
+            <S.Dot key={i} $active={i === current} onClick={() => setCurrent(i)} aria-label={`Slide ${i + 1}`} />
+          ))}
+        </S.Dots>
+        <S.ScrollDown>scroll</S.ScrollDown>
       </S.SlideWrapper>
     </S.Section>
   );

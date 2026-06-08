@@ -54,16 +54,13 @@ export const TipGrid = styled.div`
 
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr); // 태블릿 2열
+    gap: 24px;
   }
 
+  /* 모바일은 1열로 — 카드가 좁아 보이는 문제 해결 */
   @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  @media (max-width: 480px) {
-    grid-template-columns: 1fr; // 모바일 1열
-    gap: 15px;
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 `;
 
@@ -85,8 +82,9 @@ export const TipCard = styled.div`
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
   }
 
-  @media (max-width: 480px) {
-    padding: 15px;
+  /* 모바일 1열일 때 가로로 좀 더 시원하게 */
+  @media (max-width: 768px) {
+    padding: 22px 20px;
   }
 `;
 
